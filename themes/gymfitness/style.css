@@ -1,0 +1,977 @@
+/*
+    Theme Name: Gym Fitness
+    Theme URI: www.github.com/lounas.brahim
+    Author: Lounas Ibrahim
+    Author URI: www.github.com/lounas.brahim
+    Description: Theme designed for gym and fitness
+    Version: 1.0
+    License: GNU General Public Lincence
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+    Tags: Css Grid, Mobile ready, responive, Flexbox Ready, gym Theme
+    Text Domain: gymfitness
+*/
+
+
+@font-face {
+    font-family: "Acumin condensed";
+    src: url("../gymfitness/fonts/Acumin/@font-face/Acumin.eot");
+    src: url("../gymfitness/fonts/Acumin/@font-face/Acumin.woff") format("woff"),
+    url("../gymfitness/fonts/Acumin/@font-face/Acumin.otf") format("opentype"),
+    url("../gymfitness/fonts/Acumin/@font-face/Acumin.svg#Acumin") format("svg");
+}   
+@font-face {
+        font-family: "Clarendon";
+        src: url("../gymfitness/fonts/Clarendon/@font-face/Clarendon.eot");
+        src: url("../gymfitness/fonts/Clarendon/@font-face/Clarendon.woff") format("woff"),
+        url("../gymfitness/fonts/Clarendon/@font-face/Clarendon.otf") format("opentype"),
+        url("../gymfitness/fonts/Clarendon/@font-face/Clarendon.svg#Cladron") format("svg");
+}    
+
+:root {
+    /** Fonts **/
+    --mainFont: 'Raleway', sans-serif;
+    --boldFond: "Acumin condensed" , sans-serif;
+    --TitleFont:'Clarendon', sans-serif;
+
+    /** Colors **/
+    --mainColor: #dd3333; 
+    --headingColor: #cecece;
+    --textColor : #777;
+    --secondaryTextColor: #999;
+    --bgColor: #404040;
+    --btnColor: #dd4132;
+    --topFooterColor: #121212;
+}
+html{
+    margin-top:  0px !important;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+body{
+    background: #151515;
+    font-size: 1.4rem;
+    line-height: 2;
+    color: var(--textColor);
+}
+
+/** Headings **/
+h1, h2, h3{
+    margin: 0.5rem 0;
+    line-height: 1.2;
+}
+h1{
+    font-family: var(--TitleFont);
+    font-size: 7.2rem;
+    color: var(--headingColor);
+}
+
+h2{
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--secondaryTextColor);
+}
+
+h3{
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--secondaryTextColor);
+}
+h3.blog-single-title{
+    font-family: var(--mainFont);
+}
+
+/** Globals **/
+a  {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.container{
+    max-width: 120rem;
+    width: 95%;
+    margin: 0 auto;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+.container{
+    max-width: 125rem !important;
+}
+
+/** Utilities **/
+.ltr-space {
+    letter-spacing: 9px;
+}
+/** header **/
+.logo{
+    display: flex;
+    justify-content: center;
+    margin-left: 15px;
+}
+.site-header{
+    font-family: var(--TitleFont);
+    position: fixed;
+    width: 100%;
+    z-index: 2000;
+    transition: 0.3s all ease-in-out;
+}
+.scroll-down{
+    transform: translate3d(0, -100%, 0);
+}
+.scroll-up{
+    transform: none;
+}
+.navigation-bar-container {
+    max-width: 1000px;
+}
+
+.head-banner{
+    min-height: 380px;
+    margin-top: -5px; 
+    position: relative;
+}
+.head-content{
+    color: white !important;
+    text-align: left;
+    padding-left: 5rem;
+    padding-bottom: 10px;
+    width: 40%;
+    position: relative;
+    z-index: 100;
+}
+.head-desc-text{
+    font-size: 13px;
+}
+.page-title{
+    color: white !important;
+    font-size: 7.2rem;
+    line-height: 0.9;
+    text-align: left;
+    position: relative;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    width: 25%;
+    z-index: 1000;
+    transform: rotate(-7deg);
+    left: -50px;
+}
+.page-title-div{
+    padding-top: 140px;
+    padding-bottom: 10px;
+}
+.page-title-bg{
+    background: url(../gymfitness/img/heroTextBg-TextureNew1.png);
+    line-height: .9em;
+    display: table;
+    padding: 0 10px 0 100px;
+}
+.page-content{
+    flex: 0 0 calc(60% - 2rem);
+}
+.head-banner::before{
+    background-image:   linear-gradient(232deg,rgba(255,0,0,0) 70%,rgba(118,25,41,.6) 100%),url(../gymfitness/img/hero-texture.png);
+}
+.hero-section:before {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(5,5,5,0.3), rgba(10,10,10,0.3), rgba(15,15,15,0.5), rgba(18,18,18,0.85)),url(../gymfitness/img/hero-texture.png);
+}
+.head-banner::before,
+.hero-section:before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    z-index: 0;
+    height: 100%;
+}
+@media(min-width: 768px) {
+    .navigation-bar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+.attachment-post-thumbnail{
+    margin-top: 20px;
+}
+
+/** Menu **/ 
+.main-menu {
+    display: none;
+}
+
+#menu-menu-nav li a{
+    padding: 2rem 2rem;
+    width: 100%;
+    display: block;
+}
+@media(min-width: 768px) {
+    .main-menu {
+        display: flex;
+    }
+    .main-menu .menu {
+        display: flex ;
+    }
+    .main-menu a {
+        color: white;
+        text-shadow: 1px 1px 2px rgba(23, 23, 23, 0.5);
+        font-size: 1.7rem;
+        font-weight: 500 ;
+        padding: 0.5rem 2rem;
+        font-family: var(--TitleFont);
+    }
+    .main-menu .current_page_item {
+        border-bottom: 5px solid rgb(221 65 50);
+        background-color: rgba(221,65,50,0.1);
+    }
+    .main-menu ul li:hover {
+        background-color: rgba(221,65,50,0.1);
+    }
+
+    /** Mobile Menu **/
+    @media(min-width: 768px) {
+        .slicknav_menu{
+            display: none;
+        }
+        .slicknav_menu{
+            background: transparent !important;
+        }
+    }
+}
+
+/** Footer **/
+.footer-content {
+    bottom: 0;
+    width: 100%;
+    font-family: var(--mainColor);
+    font-weight: light;
+    color: #b3b3b3;
+}
+.footer-content  a{
+    color: #b3b3b3;
+    text-decoration: none;
+}
+.footer-top-area {
+    background-color: #121212;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+.footer-bottom-area {
+    background-color: #151515;
+    color: white;
+    font-size: 1.4rem;
+}
+.footer-bottom-text{
+    margin: 0;
+    text-align: center;
+    padding: 2rem;
+} 
+.footer-heading{
+    color: white;
+    font-family: var(--boldFond);
+    letter-spacing: 1.2px;
+}
+
+.fa {
+    color: var(--btnColor);
+    margin-right: 10px;
+}
+.footer-social .fa{
+    font-size: 3rem;
+}
+.footer-navigation{
+    font-weight: bold;
+}
+
+/** Page content **/
+@media(min-width: 768px) {
+    .page{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+.page{
+    margin-top: 40px;
+    margin-bottom: 50px;
+    font-family: var(--mainFont);
+    color: #333;
+}
+.page img {
+    padding-top: 20px;
+}
+
+/** Page Sidebar **/
+@media(min-width: 768px) {
+    .with-sidebar{
+    display: flex;
+    justify-content: space-between;
+    }
+}
+.widget-title{
+    margin-bottom: 30px;
+    padding: 0 0 0 16px;
+    font-size: 21px;
+    font-weight: bold;
+    border-left-width: 4px;
+    border-left-style: solid;
+    border-color:var(--mainColor);
+}
+.hr-img{
+    margin-bottom: 15px;
+    width: 50%;
+}
+.sidebar .cat-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 500px;
+    padding: 6px 0;
+    max-width: 400px;
+    border-bottom: 1px solid rgba(90,90,90,0.1);
+}
+.sidebar .cat-item a{
+    display: block;
+    padding: 6px 0;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+    line-height: 1;
+}
+
+/** Classes page **/
+li.gym-class{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important ;
+    max-width: 750px;
+}
+li.gym-class img {
+    display: block;
+    width: 100%;
+    max-width: 750px ;
+}
+li.gym-class{
+    transform: scale(1);
+    transition: ease-out all 0.2s;
+}
+li.gym-class:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+    box-shadow: 1px 2px 6px rgba(0,0,0,.5);
+}
+@media(min-width: 768px) {
+    .classes-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    li.gym-class{
+      flex: 0 0 calc(50% - 2rem);
+      position: relative;
+      margin-top: 10px ;
+      margin-bottom: 10px ;
+      border-radius: 20px;
+    }
+    .gym-class-content{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 1.5rem 2rem;
+        z-index: 1000;
+        color: white;
+    }  
+    .gradient {
+        background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.65) 99%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.5) 70%,rgba(0,0,0,0.65) 99%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.5) 70%,rgba(0,0,0,0.65) 99%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+    }
+    li.gym-class h3{
+        font-family: var(--TitleFont);
+        color: white;
+        font-size: 3rem;
+        text-shadow: 1px 1px 1px rgba(23,23,23,1);
+    }
+    .class-time{
+        font-weight: 700;
+        margin: 0;
+        font-family: var(--mainFont);
+    }
+    .time-shdw{       
+        text-shadow: 1px 1px 2px rgba(23, 23, 23, 0.8);
+    }
+    .gym-day{
+        color: var(--mainColor);
+    }
+    @media(min-width: 1150px) {
+        li.gym-class h3{
+            font-size: 4rem;
+        }
+    }
+}
+
+/** Single Class **/
+.single-class{
+    padding-top: 2rem !important;
+    background-color: #141414;
+    color: #b3b3b3;
+    margin-top: 20px;
+}
+.single-class h1, .single-class h2, .single-class h3{
+    color: white;
+}
+/** Sidebar **/
+.widget ul{
+    margin-bottom: 2rem ;
+}
+.sidebar-class{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgba(23,23,23,0);
+    margin-top:20px;
+}
+.sidebar-class:hover{
+    cursor: pointer;
+    background: #161616;
+}
+
+.sidebar-class .sidebar-image{
+    flex: 0 0 30%;
+}
+.sidebar-image img{
+    padding-top:0px;
+}
+.sidebar-class .class-content{
+    flex: 0 0 calc(70% - 1.5rem);
+}
+.recent_post_title{
+    color: #333;
+    font-size: 18px;
+    font-weight: 800;
+}
+.recent-post-date{
+    color: #999;
+    line-height: 1;
+    font-size: 13px;
+    font-weight: 500;
+}
+.recent-post-image{
+    width: 90px;
+}
+.recent-post-info{
+    margin-left: 15px;
+}
+
+/** Gallery **/
+.wrap {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.wrap-contact{
+    padding: 0 5%;
+}
+.gallery-items{
+    width: 100%;
+    display: grid;
+    grid-gap: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, auto);
+}
+.gallery-items img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.gallery-items li:nth-child(2){
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+}
+.gallery-items li:nth-child(11){
+    grid-row: 5 / 7 ;
+    grid-column: 1 / 2;
+}
+@media(min-width: 768px) {
+    .gallery-items{
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .gallery-items li:nth-child(2){
+        grid-row: 1 / 3;
+        grid-column: 3 / 4;
+    }
+    .gallery-items li:nth-child(11){
+        grid-row: 4 / 6 ;
+        grid-column: 1 / 2;
+    }
+    .gallery-items li:nth-child(15){
+        grid-row: 6 / 7 ;
+        grid-column: 2 / 4;
+    }
+
+}
+
+/** Blog **/
+.blog-list-info{
+    position: relative;
+    background-color: #1b1b1b;
+    padding: 0 5% 5rem 5%;
+    z-index: 2;   
+    margin-top: -10%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto; 
+}
+.blog-list-title{
+    display: block;
+    font-family: var(--mainFont);
+    margin: 0;
+    font-weight: bold;
+    font-size: 22px;
+    font-weight: 900;
+    color: #888;
+    line-height: 1.3;
+}
+.blog-list-title:hover,
+.about-nickname:hover {
+    color: var(--mainColor);
+}
+.cat-span,
+.blog-cat .post-categories li a{
+    display: inline-block;
+    background-color: var(--mainColor);
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 3px;
+    padding: 2px 5px 0 5px;
+    color: #FFF;
+}
+.blog-cat .post-categories,
+.single-meta-info,
+.recent-post-item{
+    display: flex;
+    margin-bottom: 10px;
+}
+.blog-cat .post-categories li{
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+.post-date-author {
+    color: #777;
+    font-size:13px;
+    font-family: var(--mainFont);
+}
+.excerpt{
+    color: #555;
+}
+div.blog-list-info p.post-date-author > a{
+    color: #AAA;
+    font-weight: 700;
+}
+div.blog-list-info p.post-date-author > a:hover {
+    color: var(--mainColor);
+}
+.author-head-info{
+    background: white;
+    max-width: 550px;
+    position: relative;
+    margin-top: 55px;
+    margin-left: 5%;
+    margin-bottom: -75px;
+    padding: 1%;
+    position: bottom;
+}
+
+/** Blog Single **/
+.blog-single-wrapper{
+    display: flex;
+}
+.blog-single-title-div{
+    background-color: #FFF;
+}
+.with-sidebar{
+    display: flex;
+    flex-wrap: wrap;
+}
+.article-blog{
+    flex: 0 0 calc(60% - 2rem);
+    position: relative;
+    background: white;
+    margin-top: -10%;
+    padding: 4% 5% 5% 5%;
+    z-index: 1000;
+}
+.sidebar{
+    flex: 0 0 calc(40% - 2rem);
+}
+.widget-title{
+    margin-top: 40px;
+}
+.class-sidebar .widget-title{
+    margin-bottom: 40px;
+}
+.blog-title{
+    margin:0 auto;
+    max-width:1440px;
+    font-size: 52px;
+    font-family: var(--mainFont);
+    font-weight: 900;
+    color: #333;
+    line-height: 0.9;
+    text-align: left;
+    position: relative;
+    z-index: 1000;
+}
+.hr-short{
+    position: relative;
+    max-width: 45px;
+    margin-left: 0;
+    margin-right: auto;
+    border: 0;
+    border-top: 6px solid var(--mainColor);
+    text-align: left;
+}
+.single-blog-image{
+    width: 40px;
+    margin-bottom: 10px;
+}
+.single-blog-info{
+    margin-left: 15px;
+    font-weight: 500;
+    font-size: 13px;
+}
+.single-blog-author{
+    color: #333;
+    margin-bottom: 0;
+}
+.single-blog-author a{
+    color: #333;
+    font-size: 13px;
+    font-family: var(--mainFont);
+}
+.single-blog-author a:hover,
+.sidebar .cat-item a:hover{
+    color: var(--mainColor);
+}
+.single-blog-date{
+    color: #b1b1b1;
+    line-height: 0.8;
+}
+.about-image img{
+    max-width: none;
+    width: 105px;
+    height: 105px;
+}
+.about-info{
+    margin-left: 20px;
+}
+.about-nickname{
+    color: #333;
+    font-weight: 800;
+    font-size: 17px;
+    line-height: 0.9;
+}
+.about-role{
+    line-height: 0.9;
+    color: #999;
+    font-weight: 500;
+    font-size: 13px;
+}
+.about-desc{
+    font-size: 14px;
+    line-height: 1.4;
+    max-width:340px;
+}
+
+/** Contact **/
+
+.contact-info-container {
+    background: url("../gymfitness/img/contact-bg.jpg");
+    padding: 5%;
+    background-position:50% 50%;
+    background-size: cover;
+    display: flex;
+}
+.contact-info-container {
+    justify-content: center;
+    align-items: center;
+}
+.contact-info-social{
+    align-items: center;
+    width: 100%;
+    max-width: 45rem;
+    padding: 7% 7%;
+    background-color: rgba(255, 255, 255, 0.94);
+    z-index: 2;
+}
+.contact-info-social .fa{
+    color: #333;
+    font-size: 15px;
+}
+.contact-info p{
+    font-size: 15px;
+    font-weight: 500;
+}
+.contact-form{
+    padding: 7% 5% 0 5%;
+}
+.contact-title{
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+.contact-p {
+    padding: 1rem 0;
+}
+.contact-form footer{
+    display: none;
+}
+.wpcf7-form input{
+    height: 48px;
+}
+.wpcf7-form textarea{
+    height: 100px;
+    min-height: 100px;
+}
+
+.wpcf7-form input,
+.wpcf7-form textarea{
+    width: 100%;
+    background-color: #FFF;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #333;
+    border-radius: 0;
+    border: 1px solid rgba(148, 148, 148, 0.25);
+}
+.wpcf7-form input:focus, .wpcf7-form textarea:focus, .wpcf7-form select:focus {
+    border: 1px solid var(--mainColor);
+}
+.wpcf7-form input[type="submit"]{
+    background: var(--mainColor);
+    color: white;
+    font-weight: 800;
+    margin-top: 2rem;
+}
+.wpcf7-response-output{
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+.social-ul{
+    display: flex;
+    margin-top: 20px;
+}
+.social-ul li{
+    margin-right: 0.8rem;
+}
+.social-ul li a {
+    text-align: center;
+    display: block;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color:#eee;
+    border-color: transparent;
+    position: relative;
+    display: block;
+}
+.social-ul .fa{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: #000;
+    height: 44px;
+    width: 44px;
+    left: 0;
+    top: 0;
+}
+.map-container{
+    width: 100%;
+    margin-top: 2rem;
+}
+#map{
+    height: 40rem;
+}
+
+/** fix gap between tiles in leaflet map **/
+.leaflet-pane, .leaflet-tile, .leaflet-marker-icon, 
+.leaflet-marker-shadow, .leaflet-tile-container, 
+.leaflet-pane > svg, .leaflet-pane > canvas, .leaflet-zoom-box, 
+.leaflet-image-layer, .leaflet-layer{
+    padding: 0 !important;
+}
+
+/** Home Page **/
+/** -------- **/
+
+/** Hero Section **/
+.hero-section{
+    width: 100%;
+    height: 100vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.hero-container{
+    max-width: 70%;
+    text-align: center;
+    color: white;
+    z-index: 1000;
+}
+.hero-tagline-title{
+    font-size: 30px;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-family: var(--mainFont);
+    color: var(--mainColor);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+
+}
+.hero-content-title{
+    color: white;
+     margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+.hero-button{   
+    background: none;
+    padding: 1.2rem 3rem;
+    color: white;
+    border: 2px solid var(--mainColor);
+    border-radius: 30px;
+    font-weight: 700;
+    margin-top: 15px;
+    font-family: var(--mainFont);
+    font-size: 18px;
+    transition: 0.2s all ease;
+}
+.hero-button:hover{
+    background: var(--mainColor);
+}
+
+/** Services Section**/
+.services-section{
+    padding: 3% 5%;
+    background-color: #121212;
+    font-family: var(--mainFont);
+}
+.service-content{
+    padding: 0 2rem;
+}
+.service-icon-title{
+    color: #ccc;
+    width: 100%;
+    margin: 0 auto;
+}
+.service-icon{
+    width: 55px;
+    height: 55px;
+    margin: 10px auto;
+}
+.service-icon-img{
+    width: 55px;
+    height: 55px;
+}
+.service-title{
+    font-size: 2.2rem;
+    text-align: center;
+}
+.service-text{
+    color: #6f6f6f;
+    text-align: center;
+    font-weight: 400;
+    color:rgb(102, 102, 102)
+}
+
+/** Areas Section**/
+.areas-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: var(--mainFont);
+    overflow: hidden;
+}
+.area{
+    flex: 0 0 25%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+.area:before{
+    content: "";
+    position: absolute;
+    background: linear-gradient(rgba(10,10,10,0.5),  rgba(10,10,10,0.3) );
+    height: 100%;
+    width: 100%;
+    transition: 0.5s all ease;
+}
+.area:hover:before{
+    background: linear-gradient(rgba(0,0,0,0.85),  rgba(0,0,0,0.85) );
+
+}
+.area:hover p{
+    opacity: 1;
+}
+.area p{
+    position: absolute;
+    margin: auto;
+    color: #CECECE;
+    font-weight: 900;
+    font-size: 2.2rem;
+    text-shadow: 1px 1px 2px rgba(23, 23, 23, 0.5);
+    opacity: 0;
+    transition: 0.5s all ease;
+}
+.area img {
+    height: 550px;
+    object-fit: cover;
+}
+
+/** Latest Post Section **/
+.latest-blog{
+    background-color: #151515;
+}
+.latest-heading-inner{
+    padding: 6% 3% 5% 3%;
+}
+.latest-blog-title{
+    color: #CECECE;
+    font-size: 3.8rem;
+    text-align: center;
+    padding-top: 1rem;
+}
+.latest-blog-subtitle{
+    text-align: center;
+    font-size: 1.6rem;
+    color: var(--secondaryTextColor);
+    margin-top: 5px;
+}
+.owl-nav {
+    position: absolute;
+    top: -50px;
+    right: 30px;
+    width: 72px;
+}
+button.owl-next, button.owl-prev{
+    padding-bottom: 1rem 3rem !important;
+}
