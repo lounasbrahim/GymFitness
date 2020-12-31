@@ -28,7 +28,10 @@ window.addEventListener("scroll", () => {
       header.classList.add(scrollUp);
     }
     lastScroll = currentScroll;
+    
+
   });
+
 
 // adding slacknav function to display slacknav menu before the header ( for Mobile menu )
 /** Using jquery .scroll() event to change the background color of the header when scroling 
@@ -42,8 +45,26 @@ window.addEventListener("scroll", () => {
 
     // call the Owl initializer function
     $(document).ready(function(){
+        $(".testimonials").owlCarousel();
         $(".owl-carousel").owlCarousel();
+
     });
+    var testimonials = $('.testimonials');
+    testimonials.owlCarousel({ 
+      items:1,
+      loop:true,
+      margin:10,
+      autoplay:true,
+      autoplayTimeout:3000,
+      autoplayHoverPause:true,
+      nav:false,
+      margin:10,
+      responsive:{
+        0:{
+            items:1
+        }
+      }
+    })
     
     // autoplay the owlcrousel and stop when hover
     var owl = $('.owl-carousel');
@@ -54,7 +75,7 @@ window.addEventListener("scroll", () => {
       autoplay:true,
       autoplayTimeout:3000,
       autoplayHoverPause:true,
-      nav:true,
+      nav:false,
       margin:10,
       responsive:{
         0:{
@@ -69,7 +90,8 @@ window.addEventListener("scroll", () => {
       }
 
     });
-      
+   
+    
     // Changing the header background color when scroll
     var $header = $('.site-header')
     $(window).scroll(function () {
