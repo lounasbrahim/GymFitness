@@ -83,6 +83,8 @@
         </div>
     </div>
 </section>
+
+
 <section class="areas-section">
         <ul class="areas-container">
             
@@ -116,6 +118,40 @@
 
         </ul>
 </section>
+
+<section class="our-classes">
+    <div class="latest-heading wrap">
+        <div class="latest-heading-inner container">
+            <h1 class="blog-title latest-blog-title">Our Classes</h1>
+            <p class="latest-blog-subtitle">Check our classes</p>
+        </div>
+        <div class="">
+                <?php  gymfintess_classes_list() ?>   
+        </div>
+    </div>
+</section>
+
+<section class="testimonials-section">
+    <div class="testimonials-container">
+        <div class="testimonials-inner wrap">
+            <div class="estimonials-inner-content">
+                <?php 
+                $args = array(
+                    "post_type" => "gym_testimonials",
+                    "post_not_in" => array( $post->ID )
+                );
+                $testimonials = new WP_Query($args);
+                while ($testimonials->have_posts()): $testimonials->the_post(  );
+                 the_title();
+                 the_post_thumbnail(  );
+                 the_content(  );           
+            
+                endwhile; wp_reset_postdata( )?>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="latest-blog">
     <div class="latest-heading">
         <div class="latest-heading-inner container">
@@ -129,9 +165,11 @@
         </div>
     </div>
 </section>
+
+
+
+
 <?php 
     // get the footer from footer.php
     get_footer();
 ?>
-
-
