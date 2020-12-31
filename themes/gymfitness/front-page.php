@@ -134,19 +134,28 @@
 <section class="testimonials-section">
     <div class="testimonials-container">
         <div class="testimonials-inner wrap">
-            <div class="estimonials-inner-content">
-                <?php 
-                $args = array(
-                    "post_type" => "gym_testimonials",
-                    "post_not_in" => array( $post->ID )
-                );
-                $testimonials = new WP_Query($args);
-                while ($testimonials->have_posts()): $testimonials->the_post(  );
-                 the_title();
-                 the_post_thumbnail(  );
-                 the_content(  );           
-            
-                endwhile; wp_reset_postdata( )?>
+            <div class="owl-carousel testimonials">
+
+        <?php 
+            $args = array(
+                "post_type" => "gym_testimonials",
+                "post_not_in" => array( $post->ID )
+            );
+            $testimonials = new WP_Query($args);
+
+            while ($testimonials->have_posts()): $testimonials->the_post(  ); ?>
+            <div class="testimonials-inner-content">
+                    <div class="testimonials-image-div">
+                    <?php the_post_thumbnail("thumbnail") ?>
+                    </div>
+                    <div class="testimonials-content-div">
+                        <p><?php  the_content()?></p>
+                    </div>
+                    <div class="testimonials-name-div">
+                        <p><?php  the_title()?></p>
+                    </div>
+            </div>
+            <?php endwhile; wp_reset_postdata( )?>
             </div>
         </div>
     </div>
@@ -159,15 +168,12 @@
             <p class="latest-blog-subtitle">News, Reviews, Tips & Tricks</p>
         </div>
         <div class="wrap">
-                <div class="owl-carousel">
+            <div class="owl-carousel">
                <?php get_template_part("template_parts/home" , "articles" )?>
             </div>
         </div>
     </div>
 </section>
-
-
-
 
 <?php 
     // get the footer from footer.php

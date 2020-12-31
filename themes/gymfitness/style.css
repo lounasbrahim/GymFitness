@@ -183,6 +183,13 @@ img{
 }
 .hero-section:before {
     background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(5,5,5,0.3), rgba(10,10,10,0.3), rgba(15,15,15,0.5), rgba(18,18,18,0.85)),url(../gymfitness/img/hero-texture.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.hero-section{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .head-banner::before,
 .hero-section:before {
@@ -835,6 +842,8 @@ div.blog-list-info p.post-date-author > a:hover {
     text-align: center;
     color: white;
     z-index: 1000;
+    opacity: 1;
+    transition: 0.5s all linear;
 }
 .hero-tagline-title{
     font-size: 30px;
@@ -946,6 +955,10 @@ div.blog-list-info p.post-date-author > a:hover {
     height: 550px;
     object-fit: cover;
 }
+/** Our Classes Section **/
+.our-classes{ 
+    padding-bottom: 2rem;
+}
 
 /** Latest Post Section **/
 .latest-blog{
@@ -975,3 +988,58 @@ div.blog-list-info p.post-date-author > a:hover {
 button.owl-next, button.owl-prev{
     padding-bottom: 1rem 3rem !important;
 }
+
+/** Testimonials section **/
+.testimonials-section{
+    margin-top: 5%;
+    width:100%;
+    height: 400px;
+    background-image: url('../gymfitness/img/risen-wang-20jX9b35r_M-unsplash.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    font-family: var(--mainFont);
+}
+.testimonials-container{
+    background: linear-gradient( rgba(5,5,5,0.9) , rgba(5,5,5,0.9));
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.testimonials-inner{
+    position: relative;
+    z-index: 100;
+    padding: 5%;
+}
+.testimonials-image-div{
+    width: 7rem;
+    height: 7rem;
+    margin: 2rem auto;
+}
+.testimonials-image-div img {
+    border-radius: 100%;
+}
+.testimonials-content-div{
+    max-width: 900px;
+    font-size: 1.8rem;
+    color: white;
+    margin: 0 auto;
+}
+.testimonials-name-div{
+    font-weight: 600;
+    margin-top: 2rem;
+    color: #b1b1b1;
+    font-size: 1.8rem;
+}
+.testimonials-name-div p:before{
+    content: '\2014 \00A0';
+}
+
+
